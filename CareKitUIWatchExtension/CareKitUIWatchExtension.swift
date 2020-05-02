@@ -6,6 +6,21 @@
 //  Copyright © 2020 Elizaveta Diuchkova. All rights reserved.
 //
 
-class CareKitUIWatchExtension {
+import SwiftUI
 
+
+public struct CareKitUIWatchExtension: View {
+    
+    public init() {
+    }
+    
+    public var body: some View {
+        return Text("Testing")
+    }
+}
+
+struct MyMainAppSwiftUIView_Previews: PreviewProvider {
+    static var previews: some View {
+       CareKitUIWatchExtension()
+    }
 }
