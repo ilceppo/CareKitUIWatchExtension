@@ -47,6 +47,8 @@ public struct CheckList: View {
                         Spacer()
                         
                         Image(systemName: (!item.isCompleted ? "checkmark.circle" : "checkmark.circle.fill"))
+                            .foregroundColor(ColorStyles.buttonPrimaryColor)
+
                                     .onTapGesture {
                                            (self.action ?? {})()
                                        }

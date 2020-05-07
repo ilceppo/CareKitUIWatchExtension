@@ -34,19 +34,12 @@ public struct SimpleTask: View {
             instructions
             footer
 
-            if(!isCompleted) {
-                Image(systemName: "checkmark.circle")
-                .font(.system(size: 40))
-                .onTapGesture {
-                    (self.action ?? {})()
-                }
-            }else{
-                Image(systemName: "checkmark.circle.fill")
+            Image(systemName: isCompleted ? "checkmark.circle.fill" : "checkmark.circle")
                     .font(.system(size: 40))
+                    .foregroundColor(ColorStyles.buttonPrimaryColor)
                     .onTapGesture {
                         (self.action ?? {})()
-                }
-            }
+                    }
             
         }.cardViewModifier()
         
