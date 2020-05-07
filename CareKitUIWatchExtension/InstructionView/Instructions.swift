@@ -26,10 +26,12 @@ public struct Instructions: View {
     
     public var body: some View {
         VStack{
-                header
+            header?
+                .fontWeight(.bold)
             Divider()
             instructions
-                footer
+            footer
+                .textFooterStyle()
             Button(action: action ?? {}) {
                 HStack {
                     Spacer()
@@ -37,12 +39,9 @@ public struct Instructions: View {
                     Spacer()
                 }
             }
+            .buttonStyle(isCompleted? CompletedButton() : PrimaryButton())
+            .padding()
         }
-        .padding()
-        .overlay(
-            RoundedRectangle(cornerRadius: 27)
-                .stroke(Color.white)
-        )
-
+        .cardViewModifier()
     }
 }

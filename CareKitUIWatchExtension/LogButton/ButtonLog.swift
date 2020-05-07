@@ -31,6 +31,7 @@ public struct ButtonLog: View {
             Divider()
             instructions
             footer
+                .textFooterStyle()
             Button(action: action ?? {}) {
                 HStack {
                     Spacer()
@@ -38,14 +39,12 @@ public struct ButtonLog: View {
                     Spacer()
                 }
             }
+                .buttonStyle(PrimaryButton())
+                .padding()
             LogDetailsView(details: details)
+                .textDeatilsStyle()
         }
-        .padding()
-        .overlay(
-            RoundedRectangle(cornerRadius: 27)
-                .stroke(Color.white)
-        )
-
+        .cardViewModifier()
     }
 }
 
