@@ -27,7 +27,8 @@ public struct ButtonLog: View {
     
     public var body: some View {
         VStack{
-            header
+            header?
+            .fontWeight(.bold)
             Divider()
             instructions
             footer
