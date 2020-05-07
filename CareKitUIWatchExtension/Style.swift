@@ -76,3 +76,13 @@ public struct CompletedStyle: ButtonStyle {
             .cornerRadius(20)
     }
 }
+
+public struct MyButtonStyle: ButtonStyle {
+    @Binding public var isCompleted: Bool
+    
+    public func makeBody(configuration: Self.Configuration) -> some View {
+        configuration.label
+            .background(isCompleted ? ColorStyles.buttonSecondaryColor : ColorStyles.buttonPrimaryColor)
+            .cornerRadius(20)
+    }
+}

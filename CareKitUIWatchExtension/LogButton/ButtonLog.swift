@@ -43,7 +43,7 @@ public struct ButtonLog: View {
                 .buttonStyle(PrimaryButton())
                 .padding()
             LogDetailsView(details: details)
-                .textDeatilsStyle()
+                .textDetailsStyle()
         }
         .cardViewModifier()
     }

@@ -39,7 +39,7 @@ public struct Instructions: View {
                     Spacer()
                 }
             }
-            .buttonStyle(isCompleted? CompletedButton() : PrimaryButton())
+            .buttonStyle(MyButtonStyle(isCompleted : .constant(self.isCompleted)))
             .padding()
         }
         .cardViewModifier()
