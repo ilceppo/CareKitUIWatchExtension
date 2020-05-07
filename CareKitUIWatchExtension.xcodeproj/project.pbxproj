@@ -87,6 +87,7 @@
 		F95EB1C6245DCB32003AED5A = {
 			isa = PBXGroup;
 			children = (
+				0E08305D24643FF600E9546D /* README.md */,
 				F95EB1D1245DCB33003AED5A /* CareKitUIWatchExtension */,
 				F95EB1D0245DCB33003AED5A /* Products */,
 			);
@@ -109,7 +110,6 @@
 				F91D340324640CB60022EFCD /* Style.swift */,
 				F91D33FF2463235B0022EFCD /* LogButton */,
 				F91D34002463237B0022EFCD /* InstructionView */,
-				0E08305D24643FF600E9546D /* README.md */,
 			);
 			path = CareKitUIWatchExtension;
 			sourceTree = "<group>";
