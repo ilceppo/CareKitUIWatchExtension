@@ -18,9 +18,14 @@ Then, manually import the product inside your WatchOS Xcode project.
 
 ## Components Available
 
+
 Only a subset of components is currently available. 
 
 Simple task card and list appearance
 Instruction task and list appearance
 Log task card 
 Checklist task card
+
+
+More components coming soon
+
