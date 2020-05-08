@@ -7,16 +7,25 @@
 //
 
 import SwiftUI
+import CareKitUIWatchExtension
 
 struct ContentView: View {
+    
+    @State var isCompletedSimpleTask = false
+    @State var isCompletedIntsructionTask = false
+    
     var body: some View {
         List {
             NavigationLink(destination: SimpleTaskView()) {
-                Text("Simple task")
+                SimpleTaskInList(title: Text("Doxylomine"), details: Text("At 7AM"), isCompleted: isCompletedSimpleTask, action: {
+                    self.isCompletedSimpleTask.toggle()
+                })
             }
             
             NavigationLink(destination: InstructionTaskView()) {
-                Text("Instruction task")
+                InstructionsInList(title: Text("Excercise"), details: Text("From 8AM to 9AM"), isCompleted: isCompletedIntsructionTask, action: {
+                    self.isCompletedIntsructionTask.toggle()
+                })
             }
         }
     }

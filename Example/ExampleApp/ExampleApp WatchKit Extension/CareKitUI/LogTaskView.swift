@@ -19,7 +19,7 @@ struct LogTaskView: View {
                 print("a")
                 let date = Date().getFormattedDate(format: "HH:mm")
                 self.events.append(date.description)
-            }, details: events)
+            }, logDetails: events, details: Text("details"))
         }
         
     }

@@ -13,7 +13,7 @@ struct InstructionTaskView: View {
     @State var isCompleted: Bool = false
     
     var body: some View {
-        Instructions(instructions: Text("Do this"), header: Text("Do this"), footer: nil, action: {
+        Instructions(instructions: Text("Do this"), header: Text("Do this"), details: nil, footer: nil, action: {
             self.isCompleted = !self.isCompleted
         }, isCompleted: isCompleted)
     }

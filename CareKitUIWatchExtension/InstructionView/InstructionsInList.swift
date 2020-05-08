@@ -8,13 +8,21 @@
 
 import SwiftUI
 
-struct InstructionsInList: View {
+public struct InstructionsInList: View {
+    
+    public init(title: Text?, details: Text?, isCompleted: Bool, action: (() -> Void)? ){
+        self.title = title
+        self.details = details
+        self.isCompleted = isCompleted
+        self.action = action
+    }
+    
     let title: Text?
     let details: Text?
+    var isCompleted: Bool
+    let action: (() -> Void)?
     
-    @State var isCompleted: Bool
-    
-    var body: some View {
+    public var body: some View {
         
         HStack {
             VStack {
@@ -30,7 +38,7 @@ struct InstructionsInList: View {
                 .padding([.horizontal,.bottom])
             }
             
-            Button(action: { self.isCompleted.toggle() }){
+            Button(action: action ?? {}){
                 Image(systemName: isCompleted ? "checkmark.circle.fill" : "circle")
             }
             .buttonStyle(SimpleButton())
