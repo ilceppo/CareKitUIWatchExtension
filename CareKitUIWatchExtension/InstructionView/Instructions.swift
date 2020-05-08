@@ -9,18 +9,20 @@
 import SwiftUI
 public struct Instructions: View {
     
-    public init(instructions: Text?, header: Text?, footer: Text?, action: (() -> Void)?, isCompleted: Bool) {
+   public init(instructions: Text?, header: Text?, details: Text?,  footer: Text?, action: (() -> Void)?, isCompleted: Bool) {
         self.instructions = instructions
         self.header = header
         self.footer = footer
         self.action = action
         self.isCompleted = isCompleted
+        self.details = details
     }
     
     let instructions: Text?
     let header: Text?
     let footer: Text?
     let isCompleted: Bool
+    let details: Text?
     
     let action: (() -> Void)?
     
@@ -28,6 +30,8 @@ public struct Instructions: View {
         VStack{
             header?
                 .fontWeight(.bold)
+            details
+                .textDetailsStyle()
             Divider()
             instructions
             footer
@@ -39,7 +43,7 @@ public struct Instructions: View {
                     Spacer()
                 }
             }
-            .buttonStyle(MyButtonStyle(isCompleted : .constant(self.isCompleted)))
+            .buttonStyle(TaskCardButtonStyle(isCompleted : self.isCompleted))
             .padding()
         }
         .cardViewModifier()

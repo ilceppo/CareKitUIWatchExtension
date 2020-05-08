@@ -9,12 +9,12 @@
 import SwiftUI
 
 public struct ColorStyles {
-    // Colors here match the color styles from the design's Styles & Components
+    // Colors here match the color styles
     static let buttonPrimaryColor = Color(red: 0.964, green: 0.460, blue: 0.6)
     static let buttonSecondaryColor = Color(red: 0.6, green: 0.6, blue: 0.6)
     static let textPrimaryColor = Color(.white)
-    static let textSecondaryColor = Color(red: 0.900, green: 0.900, blue: 0.900, opacity: 1)
-    static let  cardColor = Color(red: 0.199, green: 0.199, blue: 0.199, opacity: 1)
+    static let textSecondaryColor = Color(red: 0.900, green: 0.900, blue: 0.900)
+    static let  cardColor = Color(red: 0.199, green: 0.199, blue: 0.199)
     
 }
 
@@ -29,8 +29,8 @@ public struct TextFooterStyle: ViewModifier {
 public struct TextDetailsStyle: ViewModifier {
     public func body(content: Content) -> some View {
         content
+            .font(.system(size: 12))
             .foregroundColor(ColorStyles.textSecondaryColor)
-            .font(.footnote)
     }
 }
 
@@ -60,7 +60,7 @@ extension View {
     
 }
 
-public struct PrimaryButton: ButtonStyle {
+public struct PrimaryButtonStyle: ButtonStyle {
     public func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
             .padding()
@@ -69,7 +69,7 @@ public struct PrimaryButton: ButtonStyle {
     }
 }
 
-public struct CompletedStyle: ButtonStyle {
+public struct CompletedButtonStyle: ButtonStyle {
     public func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
             .background(ColorStyles.buttonSecondaryColor)
@@ -77,12 +77,20 @@ public struct CompletedStyle: ButtonStyle {
     }
 }
 
-public struct MyButtonStyle: ButtonStyle {
-    @Binding public var isCompleted: Bool
+public struct TaskCardButtonStyle: ButtonStyle {
+    public let isCompleted: Bool
     
     public func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
             .background(isCompleted ? ColorStyles.buttonSecondaryColor : ColorStyles.buttonPrimaryColor)
             .cornerRadius(20)
+    }
+}
+
+struct SimpleButton: ButtonStyle {
+    public func makeBody(configuration: Self.Configuration) -> some View {
+        configuration.label
+            .font(.system(size: 30))
+            .foregroundColor(ColorStyles.buttonPrimaryColor)
     }
 }

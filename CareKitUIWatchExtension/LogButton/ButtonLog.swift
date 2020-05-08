@@ -10,25 +10,29 @@ import SwiftUI
 
 public struct ButtonLog: View {
     
-    public init(instructions: Text?, header: Text?, footer: Text?, action: (() -> Void)?, details: [String]?) {
+    public init(instructions: Text?, header: Text?, footer: Text?, action: (() -> Void)?, logDetails: [String]?, details: Text?) {
         self.instructions = instructions
         self.header = header
         self.footer = footer
         self.action = action
+        self.logDetails = logDetails
         self.details = details
     }
     
     let instructions: Text?
     let header: Text?
     let footer: Text?
-    let details: [String]?
+    let logDetails: [String]?
+    let details: Text?
     
     let action: (() -> Void)?
     
     public var body: some View {
         VStack{
             header?
-            .fontWeight(.bold)
+                .bold()
+            details
+                .textDetailsStyle()
             Divider()
             instructions
             footer
@@ -40,9 +44,9 @@ public struct ButtonLog: View {
                     Spacer()
                 }
             }
-                .buttonStyle(PrimaryButton())
+                .buttonStyle(PrimaryButtonStyle())
                 .padding()
-            LogDetailsView(details: details)
+            LogDetailsView(details: logDetails)
                 .textDetailsStyle()
         }
         .cardViewModifier()
