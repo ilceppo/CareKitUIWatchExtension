@@ -10,10 +10,17 @@ We believe that health-tracking should be as easy as possible. With this in mind
 
 **WARNING**: This library is a work in progress. Currently the components are not engineered to be used in production apps.
 
-To get started, clone this repository on you Mac, open with Xcode and compile the library. 
+
+You may see the catalogue of the availbale cards in the Example project. Open the project and build it on Apple Watch in simulator or on device.
+
+To get started with the library, clone this repository on you Mac and open with Xcode. 
 Then, manually import the product inside your WatchOS Xcode project.
 
 ## Components Available
 
 Only a subset of components is currently available. 
 
+Simple task card and list appearance
+Instruction task and list appearance
+Log task card 
+Checklist task card
