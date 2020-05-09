@@ -17,13 +17,13 @@ struct ContentView: View {
     var body: some View {
         List {
             NavigationLink(destination: SimpleTaskView()) {
-                SimpleTaskInList(title: Text("Doxylomine"), details: Text("At 7AM"), isCompleted: isCompletedSimpleTask, action: {
+                SimpleTaskInList(title: Text("Simple task"), details: Text("At 7AM"), isCompleted: isCompletedSimpleTask, action: {
                     self.isCompletedSimpleTask.toggle()
                 })
             }
             
             NavigationLink(destination: InstructionTaskView()) {
-                InstructionsInList(title: Text("Excercise"), details: Text("From 8AM to 9AM"), isCompleted: isCompletedIntsructionTask, action: {
+                InstructionsInList(title: Text("Instructions"), details: Text("From 8AM to 9AM"), isCompleted: isCompletedIntsructionTask, action: {
                     self.isCompletedIntsructionTask.toggle()
                 })
             }
