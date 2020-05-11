@@ -21,6 +21,8 @@
 		0E9B3B422464697D0056C8EF /* InstructionTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9B3B412464697D0056C8EF /* InstructionTaskView.swift */; };
 		0E9B3B4424646A120056C8EF /* LogTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9B3B4324646A120056C8EF /* LogTaskView.swift */; };
 		0E9B3B4624646B610056C8EF /* DateFormat+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9B3B4524646B610056C8EF /* DateFormat+Date.swift */; };
+		F9076CA02469E33600F79EC9 /* GridTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9076C9F2469E33600F79EC9 /* GridTaskView.swift */; };
+		F9076CA22469E34400F79EC9 /* ChecklistTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9076CA12469E34400F79EC9 /* ChecklistTaskView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +85,8 @@
 		0E9B3B412464697D0056C8EF /* InstructionTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionTaskView.swift; sourceTree = "<group>"; };
 		0E9B3B4324646A120056C8EF /* LogTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogTaskView.swift; sourceTree = "<group>"; };
 		0E9B3B4524646B610056C8EF /* DateFormat+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormat+Date.swift"; sourceTree = "<group>"; };
+		F9076C9F2469E33600F79EC9 /* GridTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridTaskView.swift; sourceTree = "<group>"; };
+		F9076CA12469E34400F79EC9 /* ChecklistTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistTaskView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +160,8 @@
 				0E9B3B3C246465540056C8EF /* SimpleTaskView.swift */,
 				0E9B3B412464697D0056C8EF /* InstructionTaskView.swift */,
 				0E9B3B4324646A120056C8EF /* LogTaskView.swift */,
+				F9076C9F2469E33600F79EC9 /* GridTaskView.swift */,
+				F9076CA12469E34400F79EC9 /* ChecklistTaskView.swift */,
 			);
 			path = CareKitUI;
 			sourceTree = "<group>";
@@ -296,7 +302,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9076CA22469E34400F79EC9 /* ChecklistTaskView.swift in Sources */,
 				0E9B3B3D246465540056C8EF /* SimpleTaskView.swift in Sources */,
+				F9076CA02469E33600F79EC9 /* GridTaskView.swift in Sources */,
 				0E9B3B19246464A70056C8EF /* HostingController.swift in Sources */,
 				0E9B3B4424646A120056C8EF /* LogTaskView.swift in Sources */,
 				0E9B3B422464697D0056C8EF /* InstructionTaskView.swift in Sources */,

@@ -10,23 +10,18 @@ import SwiftUI
 import CareKitUIWatchExtension
 
 struct LogTaskView: View {
-    @State var events: [String] = []
+    @Binding var events: [String]
     
     var body: some View {
-        
-        ScrollView {
-            ButtonLog(instructions: Text("..."), header: Text("..."), footer: nil, action: {
-                print("a")
-                let date = Date().getFormattedDate(format: "HH:mm")
-                self.events.append(date.description)
-            }, logDetails: events, details: Text("details"))
-        }
-        
+        ButtonLog(instructions: Text("Log every time you have a headache"), header: Text("Headache"), footer: nil, action: {
+            let date = Date().getFormattedDate()
+            self.events.append(date)
+        }, logDetails: events, details: Text("Every morning"))
     }
 }
 
 struct LogTaskView_Previews: PreviewProvider {
     static var previews: some View {
-        LogTaskView()
+        LogTaskView(events: .constant([]))
     }
 }

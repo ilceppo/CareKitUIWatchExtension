@@ -14,7 +14,7 @@ public struct ColorStyles {
     static let buttonSecondaryColor = Color(red: 0.6, green: 0.6, blue: 0.6)
     static let textPrimaryColor = Color(.white)
     static let textSecondaryColor = Color(red: 0.900, green: 0.900, blue: 0.900)
-    static let  cardColor = Color(red: 0.199, green: 0.199, blue: 0.199)
+    static let cardColor = Color(red: 0.199, green: 0.199, blue: 0.199)
     
 }
 
@@ -34,14 +34,23 @@ public struct TextDetailsStyle: ViewModifier {
     }
 }
 
-struct CardViewModifier: ViewModifier {
-    func body(content: Content) -> some View {
+public struct TextButtonStyle: ViewModifier {
+    public func body(content: Content) -> some View {
+        content
+            .font(.system(size: 12))
+            .foregroundColor(ColorStyles.textPrimaryColor)
+            .background(Color.clear)
+    }
+}
+
+public struct CardViewModifier: ViewModifier {
+    public func body(content: Content) -> some View {
         GeometryReader { geometry in
             content
                 .padding()
                 .background(ColorStyles.cardColor)
                 .frame(width: geometry.size.width )
-            .cornerRadius(20)
+                .cornerRadius(15)
         }
     }
 }
@@ -57,7 +66,9 @@ extension View {
     func cardViewModifier() -> some View {
         self.modifier(CardViewModifier())
     }
-    
+    func textButtonStyle() -> some View {
+        self.modifier(CardViewModifier())
+    }
 }
 
 public struct PrimaryButtonStyle: ButtonStyle {
@@ -65,7 +76,9 @@ public struct PrimaryButtonStyle: ButtonStyle {
         configuration.label
             .padding()
             .background(ColorStyles.buttonPrimaryColor)
-            .cornerRadius(20)
+            .cornerRadius(15)
+            
+        
     }
 }
 
@@ -82,12 +95,15 @@ public struct TaskCardButtonStyle: ButtonStyle {
     
     public func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
+            .frame(height: 40)
             .background(isCompleted ? ColorStyles.buttonSecondaryColor : ColorStyles.buttonPrimaryColor)
-            .cornerRadius(20)
+            .cornerRadius(15)
+            .font(.system(size: 14, weight: .medium))
+          
     }
 }
 
-struct SimpleButton: ButtonStyle {
+public struct SimpleButton: ButtonStyle {
     public func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
             .font(.system(size: 30))

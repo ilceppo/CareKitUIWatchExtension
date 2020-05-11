@@ -34,17 +34,20 @@ public struct Instructions: View {
                 .textDetailsStyle()
             Divider()
             instructions
-            footer
-                .textFooterStyle()
+            
+                
             Button(action: action ?? {}) {
                 HStack {
                     Spacer()
                     Text(isCompleted ? "Completed" : "Mark as completed")
+                        
                     Spacer()
                 }
             }
             .buttonStyle(TaskCardButtonStyle(isCompleted : self.isCompleted))
             .padding()
+            footer
+            .textFooterStyle()
         }
         .cardViewModifier()
     }

@@ -29,6 +29,18 @@ public struct CheckList: View {
     let itemList: [CheckListItem]
     
     let action: (() -> Void)?
+
+    
+   var remaining: Int {
+        var number = 0
+        
+        for item in itemList {
+            if item.isCompleted != true {
+                number += 1
+            }
+        }
+    return number
+    }
     
     public var body: some View {
         
@@ -36,9 +48,9 @@ public struct CheckList: View {
             VStack{
                 header?
                     .fontWeight(.bold)
+                Text("\(remaining) remaining")
                 Divider()
                 instructions
-                footer
 
                 ForEach(itemList, id: \.self) { item in
                     HStack() {
@@ -55,12 +67,9 @@ public struct CheckList: View {
                     }
                     .padding(.horizontal)
                 }
-                
-                
-                
-            }                .padding()
-                .background(Color.gray)
-            .cornerRadius(20)
+                footer
+            }
+        .cardViewModifier()
         }
     }
 }

@@ -22,34 +22,40 @@ public struct ButtonLog: View {
     let instructions: Text?
     let header: Text?
     let footer: Text?
-    let logDetails: [String]?
+    var logDetails: [String]?
     let details: Text?
     
     let action: (() -> Void)?
     
     public var body: some View {
-        VStack{
-            header?
-                .bold()
-            details
-                .textDetailsStyle()
-            Divider()
-            instructions
-            footer
-                .textFooterStyle()
-            Button(action: action ?? {}) {
-                HStack {
-                    Spacer()
-                    Text("Log")
-                    Spacer()
+        GeometryReader { proxy in
+                VStack {
+                    ScrollView {
+                    self.header?
+                        .bold()
+                    self.details
+                        .textDetailsStyle()
+                    Divider()
+                    self.instructions
+                        .textFooterStyle()
+                    Button(action: self.action ?? { }) {
+                        HStack {
+                            Spacer()
+                            Text("Log")
+                            Spacer()
+                        }
+                    }
+                    .buttonStyle(PrimaryButtonStyle())
+                    .padding()
+                    self.footer
+                        .textFooterStyle()
+                    LogDetailsView(details: self.logDetails)
+                        .textDetailsStyle()
+                    }
                 }
+                .cardViewModifier()
+                .frame(minHeight: proxy.size.height)
             }
-                .buttonStyle(PrimaryButtonStyle())
-                .padding()
-            LogDetailsView(details: logDetails)
-                .textDetailsStyle()
-        }
-        .cardViewModifier()
     }
 }
 

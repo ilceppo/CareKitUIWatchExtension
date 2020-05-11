@@ -13,6 +13,7 @@ struct ContentView: View {
     
     @State var isCompletedSimpleTask = false
     @State var isCompletedIntsructionTask = false
+    @State var events: [String] = []
     
     var body: some View {
         List {
@@ -26,6 +27,13 @@ struct ContentView: View {
                 InstructionsInList(title: Text("Instructions"), details: Text("From 8AM to 9AM"), isCompleted: isCompletedIntsructionTask, action: {
                     self.isCompletedIntsructionTask.toggle()
                 })
+            }
+            
+            NavigationLink(destination: LogTaskView(events: $events)) {
+                LogButtonInList(title: Text("Log Button"), details: Text("just log"), action: {
+                    let date = Date().getFormattedDate()
+                    self.events.append(date)
+                } )
             }
         }
     }

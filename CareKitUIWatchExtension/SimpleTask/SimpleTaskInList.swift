@@ -31,13 +31,13 @@ public struct SimpleTaskInList: View {
                 HStack{
                     title
                     Spacer()
-                }.padding(.horizontal)
+                }.padding(.leading)
                 HStack{
                     details
                         .textDetailsStyle()
                     Spacer()
                 }
-                .padding([.horizontal,.bottom])
+                .padding([.leading,.bottom])
             }
             
             Button(action: action ?? {}){

@@ -26,17 +26,16 @@ public struct InstructionsInList: View {
         
         HStack {
             VStack {
-                HStack{
+                HStack {
                     title
                     Spacer()
-                }.padding(.horizontal)
+                }
                 HStack{
                     details
                         .textDetailsStyle()
                     Spacer()
                 }
-                .padding([.horizontal,.bottom])
-            }
+            }.padding([.leading,.vertical])
             
             Button(action: action ?? {}){
                 Image(systemName: isCompleted ? "checkmark.circle.fill" : "circle")

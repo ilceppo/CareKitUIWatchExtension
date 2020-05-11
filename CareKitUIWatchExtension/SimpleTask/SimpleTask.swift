@@ -9,9 +9,8 @@
 import SwiftUI
 
 public struct SimpleTask: View {
-
-    public init(instructions: Text?, header: Text?, details: Text?,  footer: Text?, action: (() -> Void)?, isCompleted: Bool) {
-        self.instructions = instructions
+    
+    public init(header: Text?, details: Text?,  footer: Text?, action: (() -> Void)?, isCompleted: Bool) {
         self.header = header
         self.footer = footer
         self.action = action
@@ -19,7 +18,6 @@ public struct SimpleTask: View {
         self.details = details
     }
     
-    let instructions: Text?
     let header: Text?
     let footer: Text?
     let isCompleted: Bool
@@ -29,24 +27,27 @@ public struct SimpleTask: View {
     
     public var body: some View {
         
-        VStack(){
-            header?
-                .bold()
-            details
-                .textDetailsStyle()
-            Divider()
-            instructions
-            footer
-                .textFooterStyle()
-
-            Image(systemName: isCompleted ? "checkmark.circle.fill" : "circle")
-                    .font(.system(size: 40))
+        VStack {
+            HStack {
+                VStack {
+                    header?
+                        .bold()
+                    details
+                        .textDetailsStyle()
+                }
+                
+                Spacer ()
+                Image(systemName: isCompleted ? "checkmark.circle.fill" : "circle")
+                    .font(.system(size: 30))
                     .foregroundColor(ColorStyles.buttonPrimaryColor)
                     .onTapGesture {
                         (self.action ?? {})()
-                    }
-            
-        }.cardViewModifier()
-        
+                }
+                .padding(.vertical)
+            }
+            footer
+                .textFooterStyle()
+        }
+        .cardViewModifier()
     }
 }

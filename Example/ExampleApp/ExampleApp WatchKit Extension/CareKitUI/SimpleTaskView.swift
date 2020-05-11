@@ -13,7 +13,7 @@ struct SimpleTaskView: View {
     @State var isCompleted = false
     
     var body: some View {
-        SimpleTask(instructions: Text("Swallow a pill with one glass of water"), header: Text("Heart pill"), details: nil, footer: nil, action: {
+        SimpleTask(header: Text("Heart pill"), details: nil, footer: nil, action: {
             self.isCompleted = !self.isCompleted
         }, isCompleted: isCompleted)
     }
