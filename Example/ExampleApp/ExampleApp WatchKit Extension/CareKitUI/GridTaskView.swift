@@ -7,15 +7,20 @@
 //
 
 import SwiftUI
+import CareKitUIWatchExtension
+
+
 
 struct GridTaskView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+    
+    @Binding var gridTaskItems: [GridTaskItem]
+    
+    var body: some View{
+        GridTask(instructions: Text("Grid task instructions"), header: Text("Grid task"), footer: nil, action: { index in
+            self.gridTaskItems[index].label = Date().getFormattedDate()
+            self.gridTaskItems[index].isCompleted.toggle()
+        } , itemList: gridTaskItems)
     }
 }
 
-struct GridTaskView_Previews: PreviewProvider {
-    static var previews: some View {
-        GridTaskView()
-    }
-}
+

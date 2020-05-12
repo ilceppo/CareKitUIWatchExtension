@@ -8,14 +8,22 @@
 
 import SwiftUI
 
-public struct GridListTaskInView: View {
+
+public struct GridTaskInList: View {
+    
+    public init (details: Text?, title: Text?, footer: Text?, action: ((Int) -> Void)?, itemList: [GridTaskItem] ) {
+           self.title = title
+           self.details = details
+           self.action = action
+           self.itemList = itemList
+       }
     
     let title: Text?
     let details: Text?
-    let itemList: [Bool]
-    let action: (() -> Void)?
-    let timeLabel: [Text?]
-        
+    let action: ((Int) -> Void)?
+    let itemList: [GridTaskItem]
+    
+
         public var body: some View {
             
             HStack {
@@ -27,23 +35,22 @@ public struct GridListTaskInView: View {
                     }.padding(.horizontal)
                     HStack{
                         details
-                            .textFooterStyle()
+                            .textDetailsStyle()
                         Spacer()
                     }
                     .padding([.horizontal])
                     HStack() {
-                        ForEach(0 ..< itemList.count) { item in
+                        ForEach(0..<itemList.count, id: \.self) { index in
                             VStack{
-                                Button(action: self.action ?? { }){
-                                    Image(systemName: self.itemList[item] ? "checkmark.circle.fill" : "circle")
+                                Button(action: {self.action?(index)}) {
+                                    Image(systemName: self.itemList[index].isCompleted ? "checkmark.circle.fill" : "circle")
                                 }
                                 .buttonStyle(SimpleButton())
                                 
-                                self.timeLabel[item]
+                                Text("\(self.itemList[index].label ?? "")")
                                     .textDetailsStyle()
-                                
+                                Spacer()
                             }
-                            
                             
                         }
                         Spacer()

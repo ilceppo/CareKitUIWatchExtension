@@ -9,6 +9,16 @@
 import SwiftUI
 
 public struct ChecklistTaskInView: View {
+    
+    
+    public init (details: Text?, title: Text?, footer: Text?, action: (() -> Void)?, itemList: [Bool], timeLabel: [Text?] ) {
+           self.title = title
+           self.details = details
+           self.action = action
+           self.itemList = itemList
+            self.timeLabel = timeLabel
+       }
+    
     let title: Text?
     let details: Text?
     let itemList: [Bool]
@@ -26,7 +36,7 @@ public struct ChecklistTaskInView: View {
                     }.padding(.horizontal)
                     HStack{
                         details
-                            .textFooterStyle()
+                            .textDetailsStyle()
                         Spacer()
                     }
                     .padding([.horizontal])

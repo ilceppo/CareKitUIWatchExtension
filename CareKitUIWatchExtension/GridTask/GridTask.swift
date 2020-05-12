@@ -8,13 +8,18 @@
 
 import SwiftUI
 public struct GridTaskItem: Hashable {
-    let label: String
-    var isCompleted: Bool
+    public init(label: String, isCompleted: Bool) {
+        self.label = label
+        self.isCompleted = isCompleted
+    }
+    
+    public var label: String?
+    public var isCompleted: Bool
 }
 
-public struct GridListTask: View {
+public struct GridTask: View {
     
-    public init (instructions: Text?, header: Text?, footer: Text?, action: (() -> Void)?, itemList: [GridTaskItem]) {
+    public init (instructions: Text?, header: Text?, footer: Text?, action: ((Int) -> Void)?, itemList: [GridTaskItem]) {
         self.instructions = instructions
         self.header = header
         self.footer = footer
@@ -27,7 +32,7 @@ public struct GridListTask: View {
     let footer: Text?
     let itemList: [GridTaskItem]
     
-    let action: (() -> Void)?
+    let action: ((Int) -> Void)?
     
     
     var remaining: Int {
@@ -49,21 +54,23 @@ public struct GridListTask: View {
                     .fontWeight(.bold)
                 
                 Text("\(remaining) remaining")
+                    .textDetailsStyle()
                 
                 Divider()
                 instructions
                 HStack{
-                    ForEach(itemList, id: \.self) { item in
-                        
-                        VStack {
-                            
-                            Image(systemName: (!item.isCompleted ? "checkmark.circle" : "checkmark.circle.fill"))
-                                .foregroundColor(ColorStyles.buttonPrimaryColor)
-                                .onTapGesture {
-                                    (self.action ?? {})
+                     ForEach(0..<itemList.count, id: \.self)  { index in
+                        VStack{
+                            Button(action: {self.action?(index)}) {
+                                Image(systemName: self.itemList[index].isCompleted ? "checkmark.circle.fill" : "circle")
                             }
-                            Text(item.label)
+                            .buttonStyle(SimpleButton())
+                            
+                            Text("\(self.itemList[index].label ?? "")")
+                                .textDetailsStyle()
+                            Spacer()
                         }
+                        
                     }
                 }
                 .padding(.horizontal)

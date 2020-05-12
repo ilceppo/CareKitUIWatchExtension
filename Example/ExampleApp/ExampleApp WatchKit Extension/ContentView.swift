@@ -15,6 +15,10 @@ struct ContentView: View {
     @State var isCompletedIntsructionTask = false
     @State var events: [String] = []
     
+    @State var gridTaskItems: [GridTaskItem] = [GridTaskItem(label: "1:00 PM", isCompleted: false), GridTaskItem(label: "", isCompleted: false)]
+    @State var checklistTaskItems: [CheckListItem] = [CheckListItem(label: "Breakfast", isCompleted: false), CheckListItem(label: "Dinner", isCompleted: false)]
+    
+    
     var body: some View {
         List {
             NavigationLink(destination: SimpleTaskView()) {
@@ -35,6 +39,14 @@ struct ContentView: View {
                     self.events.append(date)
                 } )
             }
+            
+            NavigationLink(destination: GridTaskView(gridTaskItems: $gridTaskItems)){
+                GridTaskInList(details: Text("details"), title: Text("Grid"), footer: nil, action: { index in
+                    self.gridTaskItems[index].label = Date().getFormattedDate()
+                    self.gridTaskItems[index].isCompleted.toggle()
+                }, itemList: gridTaskItems)
+            }
+            
         }
     }
 }

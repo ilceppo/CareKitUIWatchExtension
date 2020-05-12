@@ -12,8 +12,8 @@
 		0E083063246447AE00E9546D /* DailyStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E083062246447AE00E9546D /* DailyStatus.swift */; };
 		F9076C94246997E200F79EC9 /* LogButtonInList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9076C93246997E200F79EC9 /* LogButtonInList.swift */; };
 		F9076C96246997FD00F79EC9 /* ChecklistTaskInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9076C95246997FD00F79EC9 /* ChecklistTaskInView.swift */; };
-		F9076C9B2469C47200F79EC9 /* GridListTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9076C9A2469C47200F79EC9 /* GridListTask.swift */; };
-		F9076C9E2469C4A800F79EC9 /* GridListTaskInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9076C9D2469C4A800F79EC9 /* GridListTaskInView.swift */; };
+		F9076C9B2469C47200F79EC9 /* GridTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9076C9A2469C47200F79EC9 /* GridTask.swift */; };
+		F9076C9E2469C4A800F79EC9 /* GridTaskInList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9076C9D2469C4A800F79EC9 /* GridTaskInList.swift */; };
 		F91D33CE245DED1C0022EFCD /* ButtonLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91D33CD245DED1C0022EFCD /* ButtonLog.swift */; };
 		F91D33F82462EF800022EFCD /* Instructions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91D33F72462EF800022EFCD /* Instructions.swift */; };
 		F91D33FE246323520022EFCD /* LogDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91D33FD246323520022EFCD /* LogDetailsView.swift */; };
@@ -67,8 +67,8 @@
 		0E9B3B2F246464A90056C8EF /* ExampleApp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ExampleApp.xcodeproj; path = ExampleApp/ExampleApp.xcodeproj; sourceTree = "<group>"; };
 		F9076C93246997E200F79EC9 /* LogButtonInList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogButtonInList.swift; sourceTree = "<group>"; };
 		F9076C95246997FD00F79EC9 /* ChecklistTaskInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistTaskInView.swift; sourceTree = "<group>"; };
-		F9076C9A2469C47200F79EC9 /* GridListTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridListTask.swift; sourceTree = "<group>"; };
-		F9076C9D2469C4A800F79EC9 /* GridListTaskInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridListTaskInView.swift; sourceTree = "<group>"; };
+		F9076C9A2469C47200F79EC9 /* GridTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridTask.swift; sourceTree = "<group>"; };
+		F9076C9D2469C4A800F79EC9 /* GridTaskInList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridTaskInList.swift; sourceTree = "<group>"; };
 		F91D33CD245DED1C0022EFCD /* ButtonLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonLog.swift; sourceTree = "<group>"; };
 		F91D33F72462EF800022EFCD /* Instructions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instructions.swift; sourceTree = "<group>"; };
 		F91D33FD246323520022EFCD /* LogDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogDetailsView.swift; sourceTree = "<group>"; };
@@ -129,8 +129,8 @@
 		F9076C9C2469C47900F79EC9 /* GridTask */ = {
 			isa = PBXGroup;
 			children = (
-				F9076C9A2469C47200F79EC9 /* GridListTask.swift */,
-				F9076C9D2469C4A800F79EC9 /* GridListTaskInView.swift */,
+				F9076C9A2469C47200F79EC9 /* GridTask.swift */,
+				F9076C9D2469C4A800F79EC9 /* GridTaskInList.swift */,
 			);
 			path = GridTask;
 			sourceTree = "<group>";
@@ -283,9 +283,9 @@
 				F91D33F82462EF800022EFCD /* Instructions.swift in Sources */,
 				F94FBEFB24659788007F3B0E /* InstructionsInList.swift in Sources */,
 				0E08305824643AB200E9546D /* CheckListTask.swift in Sources */,
-				F9076C9E2469C4A800F79EC9 /* GridListTaskInView.swift in Sources */,
+				F9076C9E2469C4A800F79EC9 /* GridTaskInList.swift in Sources */,
 				0E0830552464263F00E9546D /* SimpleTask.swift in Sources */,
-				F9076C9B2469C47200F79EC9 /* GridListTask.swift in Sources */,
+				F9076C9B2469C47200F79EC9 /* GridTask.swift in Sources */,
 				F95EB1D3245DCB33003AED5A /* CareKitUIWatchExtension.swift in Sources */,
 				F94FBEF9246591B0007F3B0E /* SimpleTaskInList.swift in Sources */,
 				F9076C96246997FD00F79EC9 /* ChecklistTaskInView.swift in Sources */,

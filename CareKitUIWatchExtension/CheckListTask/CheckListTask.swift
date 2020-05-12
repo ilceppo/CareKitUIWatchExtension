@@ -9,8 +9,13 @@
 import SwiftUI
 
 public struct CheckListItem: Hashable {
-    let label: String
-    var isCompleted: Bool
+    public init(label: String, isCompleted: Bool){
+        self.isCompleted = isCompleted
+        self.label = label
+    }
+    
+    public let label: String
+    public var isCompleted: Bool
 }
 
 public struct CheckList: View {
