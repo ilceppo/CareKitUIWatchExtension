@@ -13,10 +13,10 @@ struct LogTaskView: View {
     @Binding var events: [String]
     
     var body: some View {
-        ButtonLog(instructions: Text("Log every time you have a headache"), header: Text("Headache"), footer: nil, action: {
+        ButtonLog(instructions: Text("Log every time you felt observed"), header: Text("Felt the plant staring at me"), footer: nil, action: {
             let date = Date().getFormattedDate()
             self.events.append(date)
-        }, logDetails: events, details: Text("Every morning"))
+        }, logDetails: events, details: Text("All day"))
     }
 }
 

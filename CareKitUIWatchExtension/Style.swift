@@ -10,7 +10,7 @@ import SwiftUI
 
 public struct ColorStyles {
     // Colors here match the color styles
-    static let buttonPrimaryColor = Color(red: 0.964, green: 0.460, blue: 0.6)
+    static let buttonPrimaryColor = Color("GreenPrimary")
     static let buttonSecondaryColor = Color(red: 0.6, green: 0.6, blue: 0.6)
     static let textPrimaryColor = Color(.white)
     static let textSecondaryColor = Color(red: 0.900, green: 0.900, blue: 0.900)
@@ -49,7 +49,7 @@ public struct CardViewModifier: ViewModifier {
             content
                 .padding()
                 .background(ColorStyles.cardColor)
-                .frame(width: geometry.size.width )
+                //.frame(width: geometry.size.width )
                 .cornerRadius(15)
         }
     }

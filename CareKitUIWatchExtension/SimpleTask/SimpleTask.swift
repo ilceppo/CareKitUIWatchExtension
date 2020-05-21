@@ -48,6 +48,6 @@ public struct SimpleTask: View {
             footer
                 .textFooterStyle()
         }
-        .cardViewModifier()
+        //.cardViewModifier()
     }
 }

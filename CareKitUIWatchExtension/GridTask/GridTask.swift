@@ -70,14 +70,13 @@ public struct GridTask: View {
                                 .textDetailsStyle()
                             Spacer()
                         }
-                        
                     }
                 }
                 .padding(.horizontal)
             }
             footer
         }
-        .cardViewModifier()
+        //.cardViewModifier()
     }
 }
 

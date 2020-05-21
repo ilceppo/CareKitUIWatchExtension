@@ -40,6 +40,7 @@ public struct Instructions: View {
                 HStack {
                     Spacer()
                     Text(isCompleted ? "Completed" : "Mark as completed")
+                        .multilineTextAlignment(.center)
                         
                     Spacer()
                 }
@@ -49,6 +50,6 @@ public struct Instructions: View {
             footer
             .textFooterStyle()
         }
-        .cardViewModifier()
+        
     }
 }
